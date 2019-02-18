@@ -1,0 +1,197 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+[contenteditable = "true"], input, textarea {
+    -webkit-user-select: auto !important;
+    -khtml-user-select: auto!important;
+    -moz-user-select: auto!important;
+    -ms-user-select: auto!important;
+    -o-user-select: auto!important;
+    user-select: auto!important;
+}
+ul,li{
+	list-style: none;
+}
+button,input{
+	background: transparent;
+	border: none;
+	outline: none;
+}
+html{
+	font-size: 20px;
+	color: #0d0d0d;
+	font-family: "微软雅黑","Microsoft YaHei","黑体","宋体",sans-serif;
+	-webkit-touch-callout: none;/*禁止长按链接或长按图片后弹出菜单*/
+    -webkit-tap-highlight-color:rgba(0,0,0,0);/*安卓H5页面touch时没有蓝色的边框与遮罩*/
+}
+body::-webkit-scrollbar {display:none}/*隐藏滚动条同时又能 滚动*/
+a{
+	text-decoration: none;
+}
+
+
+/**浮动**/
+.fl-l{
+	float: left;
+}
+.fl-r{
+	float: right;
+}
+.clearfix{
+    zoom: 1;
+}
+.clearfix:after{
+    content: "";
+    display:block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+}
+
+
+
+/**字体颜色**/
+.fc-f{
+	color: #fff;
+}
+.fc-black{
+	color: #0d0d0d;
+}
+.fc-r{
+	color: #f7094d;
+}
+.fc-c{
+	color: #808080;
+}
+.fc-yellow{
+	color: #ffed71;
+}
+
+
+/**下划线**/
+.border-buttom{
+	position: relative;
+}
+.border-buttom:before{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #d6d8dd;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+
+/**按钮**/
+.btn{
+	background: #ff4f81;
+	color: #fff;
+	text-align: center;
+	width: 83%;
+	line-height: 2.1rem;
+	border-radius: 5px;
+	margin: 1rem auto;
+	display: block;
+}
+
+
+/*toast提示语*/
+.common-toast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 11000;
+  width: auto;
+  padding: 0 8px;
+  line-height: 34px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.common-toast-show {
+  -webkit-animation: commonToastShow ease 300ms;
+  animation: commonToastShow ease 300ms;
+}
+
+.common-toast-hide {
+  -webkit-animation: commonToastHide ease 500ms;
+  animation: commonToastHide ease 500ms;
+}
+@-webkit-keyframes commonToastShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) scale(0);
+    transform: translate3d(0, 0, 0) scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes commonToastShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) scale(0);
+    transform: translate3d(0, 0, 0) scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@-webkit-keyframes commonToastHide {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) scale(0);
+    transform: translate3d(0, 0, 0) scale(0);
+  }
+}
+
+@keyframes commonToastHide {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) scale(0);
+    transform: translate3d(0, 0, 0) scale(0);
+  }
+}
+
+/*loading*/
+.loading {
+    width: 30px;
+    height: 30px;
+    background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAM1BMVEUAAAC/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v78/edZTAAAAEHRSTlMAwDDwQBDfkLAggFBwoGCfWeVgXQAAAZ9JREFUWMPdV+2ShSAIDdNSbx+8/9NulsaoV+kOOzs79/wr8QgCAkMfCkANEgAiiAjwwN8SkNFEUKzyRk9tggkReAJcWgQeeYLXITOa9wRmPL5ewwMV1vcE66UAAxX2qIKAVtzAYk7nEAHpNnO7yVIiKG6Hx3JIThWBmZJ/eARRXxL4m5aHDsq6nMAFw3QnfjP32uDKm+B2oc0CBkBlvgdHiw6v44hAFy5U55bsxMNFpo5ZiOcGeU+OmjHAEt+EAeNySySLlbUq3crNv4wYMIWV8l+6pi2FIwXhlq74Pi2DWfGEjYbOEIOu+HRwya2mdkVc8qYTpf6SaTwrr6jc1tq/RUPbKe0vCd9Is4vfDx24FdtJD6fxjovjQ2xuagB64KF1Z+UroQBzgPpMGLCEbRPUwvAZga0Jaq1szwRbm/CVkISyPJnczqXz3ktnI3hQpE+a/FE1+8NnPcbiXhzj+4VFtwoLX9qAKW2y4ioo7+7c0mww4GmDIW9x5E2WvM2TN5ryVlfebMvbffnAwY885B+QDl1WPPb9+8n1t4dv3ugfs5MvAh3KlfwAAAAASUVORK5CYII=) no-repeat center;
+    background-size: cover;
+    animation: loading 3s linear infinite;
+    display: block;
+    margin: 0 auto;
+    z-index: 99;
+}
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

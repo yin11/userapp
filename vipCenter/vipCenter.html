@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta http-equiv="Expires" content="0">
+	    <meta http-equiv="Pragma" content="no-cache">
+	    <meta http-equiv="Cache-control" content="no-cache">
+	    <meta http-equiv="Cache" content="no-cache">
+	    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
+	    <script src="js/base.js"></script>
+		<title>VIP会员中心</title>
+		<link href="css/comm.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<!--立即续费-->
+		<div class="head fc-f clearfix fz15"> 
+			<p class="fl-l">您的会员还有<span id="time">20</span>天到期</p>
+			<a href="https://zst.tenzhao.com/zst-wap/memberPage/showPage.html" class="fc-f btn-r fl-r">立即续费</a>
+		</div>
+		<div class="bt-grey">
+			<img src="img/1.png" width="100%">
+			<div class="flex-box">
+				<div class="item active">申请成为联盟商家</div>
+				<div class="item">邀请联盟商家</div>
+			</div>
+		</div>
+		<div>
+			<div class="clearfix title">
+				<span class="fl-l">我邀请的联盟商家</span>
+				<span class="fl-r fc-r" onclick="entryBusiness()">共<span id="ellerNum">0</span>家</span>
+			</div>
+			<!--tab-->
+			<div class="tab-box">
+				<div class="bt-grey tab-item">
+					<img width="100%" src="img/vip1.png">
+					<div class="line"></div>
+					<div class="p-box">
+						<h3>联盟商家权益</h3>
+						<h3>入住要求</h3>
+						<p class="tip">XXXXXXXXXXXXXXXXXXXXX</p>
+						<p class="tip">XXXXXXXXXXXXXXXXXXXXX</p>
+						<p class="tip">XXXXXXXXXXXXXXXXXXXXX</p>
+						<p class="tip">XXXXXXXXXXXXXXXXXXXXX</p>
+						<p class="tip">XXXXXXXXXXXXXXXXXXXXX</p>
+					</div>
+					
+					<div>
+						<a href="tel:4008090775" class="phone">XXXXXXXX</a>
+					</div>
+					<!--底部按钮-->
+					<button type="button" class="btn fc-f" onclick="admission()">立即入驻</button>
+				</div>
+				<div class="none bt-grey tab-item">
+					<img width="100%" src="img/vip2.png">
+					<div class="line"></div>
+					<div class="p-box">
+						<h3>联盟商家权益</h3>
+						<h3>入住要求</h3>
+						<p class="tip">XXXXXXXXXXXXXXXXXX</p>
+						<p class="tip">XXXXXXXXXXXXXXXXXX</p>
+						<p class="tip">XXXXXXXXXXXXXXXXXX</p>
+						<p class="tip">XXXXXXXXXXXXXXXXXX</p>
+					</div>
+					<div class="p-box small-p">
+						<h3>入驻成功，免费获得</h3>
+						<p class="tip">XXXXXXXXXXXXXXXXXX</p>
+						<p class="tip">XXXXXXXXXXXXXXXXXX</p>
+						<p class="tip">XXXXXXXXXXXXXXXXXX</p>
+						<p class="tip">XXXXXXXXXXXXXXXXXX</p>
+					</div>
+					<div>
+						<a href="tel:4008090775" class="phone">XXXXXXX</a>
+					</div>
+					<!--底部按钮-->
+					<button type="button" class="btn fc-f" onclick="share()">立即邀请</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

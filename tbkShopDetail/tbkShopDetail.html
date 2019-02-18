@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta content="" name="description">
+    <title></title>
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="js/md5.js"></script>
+    <script src="js/base.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<!--top-->
+<div class="top-title">
+    <!-- <i class="download-prompt-icon"></i>
+    <span>助商通免费领取话费、兑换现金优惠券，分享月月轻松赚</span>
+    <a class="download-prompt-link" href="http://www.tenzhao.com/zhushangtong/index.html?from=singlemessage"></a> -->
+    <img src="img/logo.png" style="height:23px;margin-top: 8px;margin-left: 20px;"/>
+    <a class="download-prompt-link" href="http://XXXXXXX.html?from=singlemessage">立即打开</a>
+</div>
+<!--商品详情-->
+<input type="hidden" value="" id="couponList">
+<div id="top">
+    <div class="img-box">
+        <img id="picUrl" src="" width="100%" height="100%">
+    </div>
+    <div class="top-box">
+        <p class="shop-title"><i class="ico-tb"></i><span id="skuName">名称</span></p>
+        <p class="shop-introduce" id="skuDesc">简介</p>
+        <p>
+            <span class="txt-r info-price-bg" style="font-size: .8rem;color: #fff;" >领券价：<span class="cm" id="wlPrice_after">￥0</span></span>
+            <span style="font-size: .5rem;text-decoration: line-through;">淘宝价：<span id="wlPrice"></span>0</span>
+        </p>
+    </div>
+</div>
+<!--商品图文详情-->
+<!--<div id="detail">
+    <p class="groom-title img-title" style="background: #fff;color: #ff420f;">查看图文详情<i class="i_open"></i></p>
+</div>-->
+<!--推荐列表-->
+<div>
+    <p class="groom-title list-title">———— · 精品推荐 · ————</p>
+    <ul id="list"></ul>
+</div>
+<!--兑换按钮-->
+<div class="clearfix sub-box">
+    <div class="fl-l">
+        <p>领券折扣<span class='fz40'>￥<span id="discount">0</span></span></p>
+    	<p class="fz20 ">（提交订单时会自动抵扣）</p>
+    </div>
+    <div class="fl-r btn-exchange">立即领券</div>
+</div>
+<!--兑换弹窗-->
+<div  id="alert" style="display:none">
+    <div class="mask"></div>
+    <div class='exchange-alert downanimat'>
+        <div class="alert-con">
+            <img src="" width="50px" height="50px" class="alert-logo" id="alertImg">
+            <p class="huabi" style='display:none'>活动期间仅需<span class="discount"></span>话币</p>
+            <p class="txt1"><span class="company-name" id="alertTxt" style="display: block">助商通</span><span class="fz30">提供赞助</span></p>
+            <button class='btn-change' onclick="detail.clickBtn()">立即领券</button>
+            <p class="txt-mit" style='display:none'>一经兑换，概不退还</p>
+        </div>
+        <button class='del-btn'></button>
+    </div>
+</div>
+<!--dailog-->
+<div class="maxk-box"></div>
+<div class="dailog" style="display: none">
+    <div class="toast-mask"></div>
+    <i class="loading"></i>
+</div>
+</body>
+<script>
+    var detail = {
+        phone:"",
+        userName : base.getQueryString('uname') ,
+        getShopDetail:function(){
+            $(".dailog,.maxk-box").show();
+            base.doGet({
+				url: '/api/voip/get/tbkIteminfo',
+                data: {
+                    itemId: detail.goodsId ,
+                },
+                sucess:function(data){
+                    if(data.state == 1){
+                    	
+                        var _goodDetailJSON = data.data.results[0] ;
+                        if(data.data.results.length !== 0){
+                            $("#picUrl").attr("src",_goodDetailJSON.pict_url);
+                            $("#skuName").text(_goodDetailJSON.title || '');
+                            $("#skuDesc").text(_goodDetailJSON.goods_desc || '');
+                            $("#wlPrice_after").text(_goodDetailJSON.min_group_price);
+                            $("#wlPrice").text(_goodDetailJSON.zk_final_price);
+                            $("#discount,.discount").text(_goodDetailJSON.coupon_discount);
+                            //$("#couponList").val(_goodDetailJSON.couponList);
+                            $(document).attr("title",_goodDetailJSON.goods_name);
+                            postTitleIOS(_goodDetailJSON.goods_name);
+                            postImgAndroid(_goodDetailJSON.goods_thumbnail_url);
+                            postStrAndroid(_goodDetailJSON.goods_desc || "");
+			                $("meta[name='description']").attr('content',_goodDetailJSON.goods_desc || "");
+			                detail.opt_id = _goodDetailJSON.opt_id ;
+			                
+			                //获取推荐列表信息
+			                detail.getList();
+			                //shareLink(_jdkGoodDetailJSON.skuName,_jdkGoodDetailJSON.skuDesc,_jdkGoodDetailJSON.picUrl);
+                        }else {
+                            $(".detail,#top").hide();
+                            base.addToast("该商品不存在");
+                        }
+
+
+                        /*if(data.JingDongKeGoodslistJSON.length == 0){
+                            $(".list-title").hide();
+                        }else {
+                            detail.showList(data.JingDongKeGoodslistJSON);
+                        }*/
+
+                        /*if( data.jdkGoodImageAndTextDetail.length != 0 ){
+                            var _jdkGoodImageAndTextDetail = data.jdkGoodImageAndTextDetail ;
+                            // _jdkGoodImageAndTextDetail = JSON.parse(_jdkGoodImageAndTextDetail);
+                            detail.html = _jdkGoodImageAndTextDetail.replace(/data-lazyload/g, "src");
+                        }else{
+                            $("#detail").hide();
+                        }*/
+
+                        //$("#detail").append(_html);
+                        $(".dailog,.maxk-box").hide();
+
+                    }else {
+                        base.addToast(decodeURI(data.msg));
+                    }
+                }
+            });
+        },
+        showList:function(data){
+            var _html = '';
+            data.forEach(function(e){
+                _html += '<Li class="item-box" data-goodsId="'+ e.goods_id+'" onclick="detail.goShopDetail(this)">'+
+                        '<img src="'+ e.goods_thumbnail_url+'" width="100%">'+
+                        '<div class="bottom-box">'+
+                        '<p class="item-title">'+ e.goods_name+'</p>'+
+                        '<p class="del-line">淘宝价：￥'+ e.coupon_min_order_amount+'</p>'+
+                        '<p class="clearfix ">'+
+                        '<span class="fl-l txt-r">￥'+ e.min_group_price+'</span>'+
+                        '<span class="fl-r quan">'+ e.coupon_discount+'</span>'+
+                        '</p>'+
+                        '</div>'+
+                        '</Li>';
+            });
+            $("#list").append(_html);
+        },
+        showAlert:function(){
+            $("#alert").show();
+            var type= judgeType();
+            if(type == 1 || type == 2) {
+                //alert(base.getQueryString("userName"))
+                //if(!( base.getQueryString("userName")== "" || base.getQueryString("userName").indexOf("null")== 0) && base.getQueryString("isLogin") == 0){
+                if( base.getQueryString("isLogin") == 0){
+                    $(".btn-change").text("马上登录").attr("onclick",'GoLogin();');
+                }
+            }else if( type == 3 && base.getQueryString("apptype") == 2){
+                $(".btn-change").text("马上下载").attr("onclick",' location.href="http://www.tenzhao.com/tgj/index.html?from=singlemessage" ');
+            }
+
+        },
+        hideAlert:function(){
+            $("#alert").hide();
+        },
+        charages:function(){
+            $(".dailog").show();
+            var  _userType = 1 ;
+            if( base.getQueryString("apptype") == 2 ){
+                _userType = 2 ;
+            }
+            base.doPost({
+                url: '/api/voip/deduct/charages',
+                data: {
+                    feeNum: Number($("#discount").text()),
+                    phone:detail.phone,
+                    userName:detail.userName ,
+                    userType : _userType ,
+                },
+                sucess:function(data){
+                    $(".dailog").hide();
+                    if(data.state == 1){
+                        $("#alert").hide();
+                        detail.getShortChain();
+                    }else if(data.state == 902405){//话费余额不足
+                        $(".btn-change").text("立即充值").attr("onclick",'Recharge();');
+                        $(".txt1").text("话费余额不足");
+                        $(".txt-mit").hide();
+                    }else if(data.state == 10000){//用户不存在
+                        $(".btn-change,.txt-mit").hide();
+                        $(".txt1").text("马上登陆").attr("onclick",'GoLogin();');
+                    }else{
+                        base.addToast(decodeURI(data.msg));
+                    }
+                }
+            })
+        },
+        //生成推广链接
+        getShortChain:function(){
+        	var type= judgeType();
+        	base.doPost({
+                url: '/api/voip/pdd/ddf/find/findDdkGoodsZsUnitUrlGen',
+                data: {
+                    goodsid: detail.goodsId ,
+                    pid : '1007958_'+base.positionId , //推广位id
+                },
+                sucess:function(data){
+                    if(data.state == 1){
+                    	if(data.data.error_response){
+                    		base.addToast(data.data.error_response.error_msg);
+                    	}else{
+                    		if(type == 3){//站外
+	                        	window.location.href = data.data.mobile_short_url;
+	                        }else{//站内
+	                        	alert(data.data.goods_zs_unit_generate_response.multi_group_url)
+				            	var _data = {  
+					        		pid : base.positionId , //pid推广位id
+					        		goodsId: detail.goodsId , //淘宝原商品id
+					        		url : data.data.goods_zs_unit_generate_response.multi_group_url.split('?')[0]
+					        	};
+					        	goPDD(_data);//传递app所需要的参数跳转app
+				            }	
+                    	}
+                    }else {
+                        base.addToast(decodeURI(data.msg));
+                    }
+                }
+            });
+        },
+        goShopDetail:function(obj){
+            window.location.href = window.location.origin+'/zst-wap/pddShopDetail/pddShopDetail.html?goodsId='+$(obj).attr("data-goodsId")+'&userName='+detail.userName +'&apptype='+base.getQueryString("apptype");
+        },
+        clickBtn:function(){//点击兑换按钮
+            if(base.getQueryString("apptype") == 2){
+                detail.charages();
+            }else{
+                detail.getShortChain();
+            }
+        },
+        //从淘宝分类接口获取商品列表组成推荐列表
+        getList:function(){
+        	base.doPost({
+				url: '/api/voip/pdd/ddf/find/findDdkGoodsList',
+                data: {
+                    opt_id: detail.opt_id , //类目Id
+                    page : 1 ,
+                    page_size : 10
+                },
+                sucess:function(data){
+                	if(data.state == 1){
+                		if(data.data.goods_search_response.goods_list.length != 0){
+                			detail.showList(data.data.goods_search_response.goods_list);
+                		}else{
+                			$(".list-title").hide();
+                		}
+                		console.log(data.data.goods_search_response.goods_list)
+                	}else {
+                        $(".list-title").hide();
+                    }
+                }
+            })
+        }
+    };
+
+    $(document).ready(function(){
+        try{
+             if(base.getQueryString("apptype") == 2){ // 糖公鸡
+                    $('.alert-logo,.txt1').hide();
+                    $('.huabi,.txt-mit').show();
+            }
+            getPositionId();
+            getAlertMsg();
+            var _data = base.parseQueryString(window.location);
+            detail.goodsId = base.isNvl(_data.goodsId , "");
+            detail.phone = base.isNvl(_data.phone, "");
+            detail.userName = base.isNvl(_data.userName, "");
+            detail.getShopDetail();
+            var type= judgeType();
+            if(type == 3){
+                $(".top-title").show();
+                if( base.getQueryString("apptype") == 2 ){
+                    $(".top-title img").attr("src","img/tgj.png");
+                    $(".download-prompt-link").attr("href",'http://www.tenzhao.com/tgj/index.html?from=singlemessage');
+                }
+            }
+            if(type == 3){
+                $(".top-title").show();
+				if( base.getQueryString("apptype") == 2 ){
+                    $(".top-title img").attr("src","img/tgj.png");
+                    $(".download-prompt-link").attr("href",'http://www.tenzhao.com/tgj/index.html?from=singlemessage');
+                }else{
+                	$(".download-prompt-link").attr("href",'https://ax4eod.mlinks.cc/AeUS?userId='+base.isNvl(base.getQueryString("userId"),"")+'&skuid='+base.isNvl(base.getQueryString("skuid"),""));
+                }
+            }
+            $(".btn-exchange").click(function(){
+                detail.showAlert();
+            });
+            $(".del-btn").click(function(){
+                detail.hideAlert();
+            });
+            $("#detail .groom-title").click(function(){
+                $(this).text("———— · 图文详情 · ————").attr("style","");
+                   $("#detail").append(detail.html );
+            });
+
+        	shareLink($("#skuName").text(),$("#skuDesc").text(),$("#picUrl").attr("src"));
+        }catch (err){
+            //alert(err)
+        }
+
+    });
+
+</script>
+</html>
