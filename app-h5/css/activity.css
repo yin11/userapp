@@ -1,0 +1,285 @@
+/****** 积分活动 *******/
+.activity-con{
+    background: #fff;
+    margin-bottom: 6px;
+    padding: 5px .85rem 12px .85rem;
+    font-size: 12px;
+    line-height: 20px;
+}
+.activity-num{
+    line-height: 30px;
+    padding-left: .25rem;
+    position: relative;
+    padding-right: 3.1rem;
+}
+.activity-num>p:first-of-type{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.flex-box{
+    display: flex;
+    display: -webkit-flex;
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+}
+.flex-box .item{
+    flex: 1;
+}
+.flex-box .item:first-of-type{
+    color: #fff;
+    border-radius: 4px;
+    line-height: 37px;
+    font-size: 15px;
+}
+.full-cut .item:first-of-type{
+    background: #54adef;
+}
+.discount .item:first-of-type{
+    background: #25c3a3;
+}
+/*.activity-end .item:first-of-type{
+    background: #e1e4ec;
+}*/
+
+/****** 积分活动详情 ******/
+/*详情内容*/
+.detail-box{
+    padding: 16px .75rem;
+}
+.detail-box .title{
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+}
+.detail-box .title .name {
+    position: absolute;
+    line-height: 17px;
+    color: #fff;
+    padding: 0 8px;
+    border-radius: 8px;
+    left: 0;
+}
+.detail-box .title .state {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.detail-box li {
+    font-size: 15px;
+    line-height: 45px;
+}
+.detail-box li .fl_r {
+    color: #9d9faa;
+    text-align: right;
+}
+.active-detail{
+    text-align: center;
+    padding: 38px 0 28px 0;
+    font-size: 16px;
+}
+.active-detail .num{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+
+/******** 活动参与会员 *********/
+.participate-con{
+    padding: 20px 1.15rem 20px 1.5rem;
+    font-size: 12px;
+    line-height: 42px;
+}
+.participate-con>.fl_l{
+    position: relative;
+    padding-left: 2.6rem;
+    /*background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAABVCAMAAAAPK1hoAAABC1BMVEWapMEAAACapMH7/P2cpsKapMGapMH///+apMHT1+SapMGapMGapMGapMH09fiapMGapMGapMGapMH6+/yapMH+/v7////+/v/7+/2apMH5+vv19vn9/v78/f34+fr29/nt7/Ts7vTq7PLn6fDl6O/a3ujY3OfCyNq2vdKstMz9/f76+vz5+vz5+fv19vn09fjw8fbi5e3f4uvc3+rQ1ePM0eDJzt6gqsX////9/v79/v78/f34+fv29/rr7fP5+vv19vnT1+S+xNf3+Pr9/f7+/v77+/35+vzo6/H29/r5+fv3+Pr8/P38/f74+fv09fj7+/3V2eX09fj+/v73+PrEytv09fjQ1eL////5YHU/AAAAWHRSTlMzADDZAiYt+CoEIQsJDq8aFB0H0hcW/PTUEb2e6OW7tJWSiYB8Z2NKQjsSzcnGrKacdm9qWVRRNQ3x7t/CqI6MeVxHOAnr25SGgGxJMCQjH9ZgXFtZTUgN/syQagAAA5pJREFUWMOtmYdW4zAQRZ8TlzhxiFMIKUCogYRel963L7B99f9fss6GgyHRk2SfvR9wjzyakTwjWFqCZinv5DIDXCdfDguWFmiMNSeDUTJOrZDeWinlwHBLQSpr0YGaXDOxtZiDHjdMZC04MMNtGlvtMsxxKmbWooskZEITawlJyds6q+0gOblAbfVzSEOmoLJWXKQjU+RWLtVTZFafSA2DILfaJKam2kBq5bvfW56f2GhUz7YWrsFxfYm1BsLy5ol45t32AS+zcWsBcnYbYoTWIQilUatNdmpCjFNfACEYsZYh4zArpHRYkcVW/v0HniA0epBSi61s/1c8QamS9PJfWJuQMSMUbEFK+YU1RzeKs6RYLOhSr4Wa+hueXaBRfSc0XMgXaz9ZA2lFCR2efLHhk7VEo5omss6TVVZWb4711g1IqURWUgFdocfrsUoACcC8MGCfhQAkAyZMrHvyLBhYbcg4M7EuQkrBAjlY1kysC+yIgRVCxrqJ9QP5l7FATtZZE+sOO2VBLsEtE2sXZLsgP6+waGL9BTk2rAxkrAg90yBUYEFOVm/dBCGg1jm99RqEAmzIudFKq2AUqVVfs12F1QKhN5V2qSiwHIjYU19bq4Bit1ykisEyOBVSBdqynYOCqLby4HT4GajAtcD7K5613i5UOJG1CRW7khprrUBJObIGULOUHXF2oSGMrHFqMfY2T8UQr7q9Dy2VgTUPPTfdncWlnf0eDHCtgTXE/6X8z1oBZXUvaomq2dc01jtzu4rKag7/iByiXJrlR4F39uEG9KcQrNNaOR8qOfXOofyGHVptSRbMe8KANmmTI6skCw7WhBnZb7LmaGgN6AWrZ360BIbW8cUuiCRsjyTr0Dq22Atu0Ac3HFrHGs4dkZSL11GNrf5zGhwKjv5eKMbWAaGiITTvZvKj8wGHH9N6JuJpRmyNY7Aq0nEQf39sHVDk16qeNUSUZNOcGvsTNGxn8vJ5Vpnkv1ktODaZveXXU1tncrZFrPZsamv2D58+3p2nlK4/qialdjuVdGNSM9W9Ok7srLf72gn052xC6dtPJtPyxy0vibR1azjZ/141z6irI+NXiP7HaSPnVPsh0YvJ/eW03nl+m/h15+Hqqyq+3un7L36al6ij3+01+YpPGps/J1O/mtn924+z1dMTL87N45lG6/LzpG/2asbN9z8uO43pKa/uTb3Ntt5/Ih9OrBz/7qg/OaB/dOfblp6/mfFAsJAvYWsAAAAASUVORK5CYII=") no-repeat;
+    background-size: auto 100%;*/
+}
+.participate-con>.fl_l img{
+    position: absolute;
+    height: 42px;
+    width: 2.1rem;
+    left: 0;
+    border-radius: 50%;
+}
+.participate-num{
+    font-size: 32px;
+    color: #1bbaff;
+    padding-left: .6rem;
+}
+
+
+/***** 新增满减活动 *****/
+input[type="number"].num{
+    border-bottom: 1px solid #c7c7c7;
+    width: 3.5rem;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 0;
+    margin: 0 .5rem;
+}
+.detail-box li input.fl_r{
+    /*height: 45px;
+    line-height: 45px;
+    width: 43%;*/
+    height: 15px;
+    padding: 15px 0;
+    width: 43%;
+}
+.detail-box li input[readonly].fl_r{
+    padding-right: .55rem;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUBAMAAABL3sEiAAAALVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADBoCg+AAAAD3RSTlMATEUqCQVCJT4wLh8NOBkzWI5dAAAAVElEQVQI12M4e4ABBDaKgCl2oQAwXagKppihXMNUMMUlxgAGCxvAFKcEhGvYAqYc5UAki+IGMEccwikAUUHCIJJV0QBEsYE5DIkLQOQhSYjtE0AkAHgkDHYjIcr3AAAAAElFTkSuQmCC") no-repeat right center;
+    background-size: 6px auto;
+}
+
+.title-head{
+    color: #ffffff;
+    border-radius: 50%;
+    width: 35px;
+    padding: 11px .6875rem;
+    text-align: center;
+    position: absolute;
+    font-size: 16px;
+    line-height: 21px;
+    left: 50%;
+    margin-left: -30px;
+    top: -35px;
+}
+.add{
+    margin-top: 30px;
+}
+.add .title{
+    padding-top: 35px;
+}
+
+
+/******* 新增折扣活动 *******/
+
+
+
+/******** 卡券活动 ********/
+.over .item:first-of-type{
+    background: #e1e4ec;
+}
+.ticket-state{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: oblique;
+    padding-left: .9rem;
+}
+.not-begin .ticket-state{
+    color: #25c3a3;
+}
+.ongoing .ticket-state{
+    color: #ffc209;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAeCAMAAAAFBf7qAAAAk1BMVEUAAAD/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgn/wgl/2lFAAAAAMHRSTlMADsYXCvPrt6qbh1om+eKvi31jOzIiHQb27d/Y0MqXkIJ7cWhWTEAvFAHRwbOgXE7m8HzDAAAA80lEQVQoz3XS527CMBSG4Y/sQQJNSEJZZZTV+d3/1bU22D4S5vmTSG905NiGcJn2eOY1Hj9LE8Yd/NZkMvKWa0Iy8KaOysGX3qn5Rm6oTSH1V712alUkyvCthrzxrhHpyBD4pfEpUs0ZznQuYhPYD3ORjqbkJPcBhS0w/gHQ8MEESAlEfLRCS4Y4eFJwnpMlMjpxHutnUpEssHQlDTs6GWoae6CUU5HypjoBCEVa252bQdm59IWW2k78vz2bBRV7lQq6Ma1L2st9ufb9BOuD/5YRTCtcytTKI3NfEtKlBZnDGhVcmYvUsC4hhZsyun2VbQdof9w/QdOB//70AAAAAElFTkSuQmCC") no-repeat 0 center;
+    background-size: auto 15px;
+}
+.over .ticket-state{
+    color: #d0d4e1;
+}
+.over .item:first-of-type,.ongoing .item:first-of-type,.not-begin .item:first-of-type{
+    flex: 1.5;
+}
+
+
+
+/****** 卡券活动详情 ******/
+.under-line{
+    width: 100%;
+    border-bottom: 1px dashed #cccccc;
+    position: relative;
+    top: -8px;
+    margin-bottom: 10px;
+}
+.under-line:before,.under-line:after{
+    content: "";
+    display: block;
+    width: .75rem;
+    height: .75rem;
+    border-radius: 50%;
+    background: #fafafa;
+    position: absolute;
+    top: 15px;
+}
+.under-line:before{
+    left: -1.1rem;
+}
+.under-line:after{
+    left: 100%;
+    margin-left: .4rem;
+}
+
+
+/******* 卡券明细 *******/
+.ticker-con{
+    margin: 0 .45rem 17px .45rem;
+    background: #fff;
+    height: 72px;
+    font-size: 12px;
+    padding-left: 4.125rem;
+    position: relative;
+}
+.violet .ticket-state{
+    color: #1d2088;
+}
+.blue .ticket-state{
+    color: #1bbaff;
+}
+
+/*竖线*/
+.vertical-line{
+    width: 1px;
+    height: 72px;
+    border-left: 1px dashed #fafafa;
+    position: absolute;
+}
+.vertical-line:before, .vertical-line:after {
+    content: "";
+    display: block;
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    background: #fafafa;
+    position: absolute;
+    left: -.3rem;
+}
+.vertical-line:before{
+    top:-.3rem;
+}
+.vertical-line:after{
+    bottom: -.3rem;
+}
+
+.ticker-con .ticket-state{
+    font-size: 16px;
+    left: 0;
+    width: 4.125rem;
+    text-align: center;
+    padding: 0;
+    line-height: 72px;
+}
+.ticker-con.ongoing .ticket-state{
+    background: #fff;
+}
+.con-text{
+    padding-left: .875rem;
+    line-height: 25px;
+    padding-top: 11px;
+}
+.con-text span:first-of-type{
+    padding-right: .5rem;
+    width: 2rem;
+    display: inline-block;
+}
+
+
+
+
+/******** 新增卡券 ********/

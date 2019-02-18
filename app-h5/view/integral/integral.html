@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>积分活动</title>
+    <link href="../../lib/WEUI/css/weui.min.css"  rel="stylesheet">
+    <link href="../../lib/WEUI/css/jquery-weui.min.css"  rel="stylesheet">
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/activity.css"  rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../lib/WEUI/js/jquery-weui.min.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/integral.js"></script>
+    <script>
+        window.onload = function(){
+            setTimeout(function(){
+                integral.integralReady();
+            },100);
+        }
+    </script>
+</head>
+<body class="body-bg">
+    <input type="hidden" value="0" class="flag">
+    <input type="hidden" value="1" id="pagmun">
+    <!--title-->
+    <header  class="border-bottom">
+        <a class="return">返回</a>
+        <h2>积分活动</h2>
+        <div class="icon"><i class="ico-add" id="ico-add"></i><i class="ico-select" id="ico-select"></i></div>
+    </header>
+    <!--search-->
+    <section class="search">
+        <input type="text" placeholder="搜索活动编号" id="search">
+    </section>
+    <!--list-->
+    <section class="activity" id="list">
+       <!-- <div class="activity-con full-cut">
+            <a href="javascript:void (0)">
+                <div class="activity-num">
+                    <p>活动编号：<span class="id_num">1234567890987654</span></p>
+                </div>
+                <div class="flex-box">
+                    <div class="item">满100减20</div>
+                    <div class="item">
+                        <p>已参与人数</p>
+                        <p>3000</p>
+                    </div>
+                    <div class="item">
+                        <p>已参与总次数</p>
+                        <p>3000</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="activity-con full-cut">
+            <a href="javascript:void (0)">
+                <div class="activity-num">
+                    <p>活动编号：<span class="id_num">1234567890987654</span></p>
+                </div>
+                <div class="flex-box">
+                    <div class="item">满618减300</div>
+                    <div class="item">
+                        <p>已参与人数</p>
+                        <p>3000</p>
+                    </div>
+                    <div class="item">
+                        <p>已参与总次数</p>
+                        <p>3000</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="activity-con discount">
+            <a href="javascript:void (0)">
+                <div class="activity-num">
+                    <p>活动编号：<span class="id_num">1234567890987654</span></p>
+                </div>
+                <div class="flex-box">
+                    <div class="item">sale9折</div>
+                    <div class="item">
+                        <p>已参与人数</p>
+                        <p>3000</p>
+                    </div>
+                    <div class="item">
+                        <p>已参与总次数</p>
+                        <p>3000</p>
+                    </div>
+                </div>
+            </a>
+        </div>-->
+    </section>
+    <div class="weui-loadmore" id="load">
+        <i class="weui-loading"></i>
+        <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+/*****新闻推送*****/
+.news-con{
+    background: #fff;
+    margin-bottom: 10px;
+    padding: .75rem 1rem 0 1.1rem;
+}
+.news-con p{
+    color: #7d7f8d;
+}
+.news-con-top{
+    position: relative;
+    padding-left: 4.9rem;
+}
+.news-con-top .head{
+    position: absolute;
+    width: 4.5rem;
+    height:4.5rem;
+    overflow: hidden;
+    border-radius: 2px;
+    left: 0;
+}
+.news-con-top .content{
+    min-height: 4.5rem;
+}
+.news-con-top h3{
+    font-size: 17px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 7px;
+}
+.news-con-top .content p{
+    line-height: 22px;
+    font-size: 12px;
+    text-indent: 2em;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.ico-read{
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAPCAYAAADgbT9oAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAABWElEQVQ4y43US0tcQRAF4G+cmfgIZKJofCQxiZiFgoiCCP5/dOHClW4CGsQkRHzhOMYxiC5uDWnbey8paKhHn9PV1VXdUC8dfMAEXofvFuf4gasqYKPCP4KlIK2TnzjAn/8hnsY6Wpn/Fo9J5gN5wB5+1RF/xkpJVt9wHfYbLOJ9tm8fhwOjmQS+lJAeRzb9xNeP7IbxNvG/i+wvU+IZrGWkfWwndgejuAv7FPNoJ3um0EO3GVfbKqn1d5yFPo9NfMK9f93QwmSGm8XpUADKpJfoyxV6rwK7OYSjimB6xd8VersCe9TERdSukwVbisdLyS4Ur/+YZD+W4U6w30yA6XSJw27QDfs8aj4gncbXjPQMuzxvtxOMZ+RzUcduRjCHjRLSnYFRNnmrii5I5TKWOHy85Pp7qaPqr/gY9XulXv4q/orjPNCoAbWxoBjd4SzWV4z6oaKvX8gTVYpJTRh/jTAAAAAASUVORK5CYII=") no-repeat;
+    background-size: auto 100%;
+    margin-right: 2px;
+}
+.ico-good{
+    display: inline-block;
+    width: 11px;
+    height: 10px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAA1UlEQVQ4y63Sy0sDMRDH8c9mPYsPFAXxoAjePHn27xeRgoeiPRVRsCL4oopF1MNOsSwbaEl/EMg88p1JMpV/beAQa2G/4y4WrOIAm1jBOGJDqCJpHye6NcArTjPxB1xUUelMmQYJx4UQOEpYXwLoN8XDleonYbIEUEqaHykniTko1CjhUTN8Jeqn2FwWQG7wUYcxwSd2Fr0SrqCecb7hG9tzQp5wPjXqVvB5zs5Gs5Au0LSzF+xlIEP02s46kzyOqrutnD6uuw7kQPCFe2xp5q2H21zyHyiCLNkJpQqoAAAAAElFTkSuQmCC") no-repeat bottom;
+    background-size: auto 100%;
+    margin-right: 2px;
+}
+.ico-phone{
+    display: inline-block;
+    width: 11px;
+    height: 14px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAJ1BMVEUAAACysrKxsbGysrKysrK1tbWxsbGysrKxsbGysrKysrKvr6+ysrLLHVC+AAAADHRSTlMAwIDgoDDwv5BPPxCEz2k/AAAARUlEQVQ4y2MAAcYzKEAAJEa2hJESHCgjSwDZCM6oxKjEqASREsiAGhKtIdglDjMw5GCVOMLAIINDB7cNdjs8l4MpqvsDAHsC0Y2E+7PBAAAAAElFTkSuQmCC") no-repeat bottom;
+    background-size:100% auto;
+}
+.ico-computer{
+    display: inline-block;
+    width: 11px;
+    height: 14px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAKlBMVEUAAACysrKzs7Ozs7OxsbGvr6+xsbGxsbGxsbGysrK1tbWxsbGysrKysrK38ghJAAAADXRSTlMAwD9/gBDP8KBnMN+wC2nZaAAAAHVJREFUOMtjIB1wGWMFCxh872IFNxlqsUvcZrh7URALyL3LcPcCNpt1RyVGJWgkcUkJC5gLlMAOqChxneEsdokbDBHQHCEL5sNziyvc5bxgcYSvKJCIhUhcRRdnzYVIXAtAkwiDuTMVTQKoAaoFTcIFDhjIBQCZvBxz4FzLcQAAAABJRU5ErkJggg==") no-repeat bottom;
+    background-size:100% auto;
+}
+.news-con>p{
+    line-height: 28px;
+}
+.news-con>p span.fl_r{
+    padding: 0 .375rem;
+}
+
+/******* 新闻详情 *********/
+.state-div{
+    padding:1rem;
+    background: #fafafa;
+}
+.state-div span.fl_r{
+    margin-left: .5rem;
+}
+.state-div .state{
+    color: #0c8deb;
+}
+.new-detail{
+    padding: 0 1.1rem;
+}
+.new-detail h3{
+    line-height: 60px;
+    font-size: 18px;
+}
+.new-detail .time{
+    text-align: right;
+    line-height: 38px;
+    margin-bottom: 12px;
+    color: #848694;
+}
+.new-detail .text{
+    line-height: 20px;
+    text-indent: 2em;
+    color: #5c5f71;
+}
+.btn{
+    margin-top: 40px;
+}

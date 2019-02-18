@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>卡购买记录</title>
+    <link rel="stylesheet" href="../../lib/WEUI/css/weui.min.css">
+    <link rel="stylesheet" href="../../lib/WEUI/css/jquery-weui.min.css">
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/card.css"  rel="stylesheet">
+
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../lib/WEUI/js/jquery-weui.min.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/card.js"></script>
+    <script>
+        window.onload = function(){
+            setTimeout(function(){
+                card.cardPurchaseReady();
+            },100);
+        }
+    </script>
+</head>
+<body class="body-bg">
+    <!--title-->
+    <header class="border-bottom">
+        <a class="return">返回</a>
+        <h2>卡购买记录</h2>
+    </header>
+    <!--list-->
+    <ul id="list">
+        <!--<li class="purchase-list border-bottom currency" >
+            <a href="javascript:window.location.href = 'purchase-detail.html';">
+                <div class="ico-bg"></div>
+                <div>
+                    <p>代理商：<span id="">小红</span></p>
+                    <p class="time">2016-05-01 12:21:21</p>
+                </div>
+                <div class="number"><i id="">50000</i>张</div>
+            </a>
+        </li>
+        <li class="purchase-list border-bottom custom" >
+            <a href="javascript:window.location.href = 'purchase-detail.html';">
+                <div class="ico-bg"></div>
+                <div>
+                    <p>代理商：<span id="">小红</span></p>
+                    <p class="time">2016-05-01 12:21:21</p>
+                </div>
+                <div class="number"><i id="">500</i>张</div>
+            </a>
+        </li>-->
+    </ul>
+    <div class="weui-loadmore" id="load">
+        <i class="weui-loading"></i>
+        <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+    <!--<p class="more">没有更多了</p>-->
+
+</body>
+
+
+</html>

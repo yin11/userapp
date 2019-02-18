@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>卡统计</title>
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/card.css"  rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.0.0-beta1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/3.6.2/echarts.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/card.js"></script>
+    <script>
+        window.onload = function(){
+            setTimeout(function(){
+                card.cardStatisticsReady();
+            },100);
+        }
+    </script>
+</head>
+<body>
+
+    <!--title-->
+    <header  class="border-bottom">
+        <a href="javascript: window.history.go(-1);" class="return">返回</a>
+        <h2>卡统计</h2>
+        <div class="icon"><i class="ico-card-usage" ></i><i class="ico-card-purchase" id=""></i></div>
+    </header>
+    <!--卡数量-->
+    <section class="card-box">
+        <div><p>卡总量</p><p id="totalMoney"></p></div>
+        <div><p>通用卡</p><p id="publicCardNum"></p></div>
+        <div><p>定制卡</p><p id="privateCardNum"></p></div>
+    </section>
+    <!--环形图-->
+    <section class="ring-chart" id="ring-chart" ></section>
+
+    <!--曲线图-->
+    <section class="diagram" id="diagram"></section>
+</body>
+<script>
+
+
+    //饼图
+    var myChart = echarts.init(document.getElementById('ring-chart'));
+    // 指定图表的配置项和数据
+    var _text="激活比例"+"30%";
+    var option1 = {
+        title: {
+            //subtext: '购卡总比例',
+            subtextStyle:{
+                fontSize:16
+            },
+            text:_text,
+            textStyle:{
+                fontSize:28
+            },
+            itemGap:-60,
+            x: 'center',
+            y: 'center'
+        },
+        tooltip: {
+            show:false
+        },
+        color:['#0c8deb', '#e1e4ec'],
+        legend: {
+            itemWidth:0,
+            selectedMode:false,
+            // orient: 'vertical',
+            x: 'center',
+            y: '60%',
+            //data:['未激活70%','已激活30%']
+        },
+        series: [
+            {
+                type:'pie',
+                radius: ['100%', '95%'],
+                hoverAnimation:false,//关闭放大效果
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        //position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '10',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:30, name:'已激活30%'},
+                    {value:70, name:'未激活70%'}
+                ]
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option1);
+
+    //曲线图
+    var myChart = echarts.init(document.getElementById('diagram'));
+    var option2 = {
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['卡总量','通用卡','定制卡'],
+            itemWidth:11
+        },
+        grid: {
+            borderWidth:0,
+            x: '0%', y: '8%', width: '100%', height: '70%',
+            borderColor:"transparent"
+        },
+        color:['#9759ff', '#0c8deb',"#37f6d1"],//改变曲线颜色
+        xAxis : [
+            {
+                type: 'category',
+                boundaryGap: false,//这里表示是否补齐空白
+                data : ['1月','2月','3月','4月','5月'],
+                splitLine:{show: false},
+                axisTick:{show: false},
+                nameGap:0,
+                boundaryGap: ['0%', '0%']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                position:"right",
+                splitLine:{show: false},
+                axisTick:{show: false},
+                data : ['1k','2k','3k','4k','5k'],
+                nameGap:-10,
+                zlevel:10,
+                axisLabel:{
+                    formatter:function(v){
+                        return (v/1000)+"k";
+                    },
+                    margin:-30
+                }
+            }
+        ],
+        series : [
+            {
+                name:'卡总量',
+                type:'line',
+                smooth:true,
+                symbol:"none",
+                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                data:[1100, 500, 210, 554, 260]
+            },
+            {
+                name:'通用卡',
+                type:'line',//平滑曲线
+                smooth:true,
+                symbol:"none",//去掉园点
+                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                data:[30, 182, 434, 791, 39 ]
+            },
+            {
+                name:'定制卡',
+                type:'line',
+                smooth:true,
+                symbol:"none",
+                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                data:[20, 1132, 601, 234, 120]
+            }
+        ]
+    };
+    myChart.setOption(option2);
+</script>
+</html>

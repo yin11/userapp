@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>卡券活动详情</title>
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/activity.css"  rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/tikect.js"></script>
+</head>
+<body class="body-bg">
+    <!--title-->
+    <header  class="border-bottom">
+        <a class="return">返回</a>
+        <h2>卡券活动详情</h2>
+    </header>
+    <!--detail-->
+    <section class="detail-box shadow-box">
+        <div class="title">
+            <span class="name blur-bg">活动编号</span>
+            <p id="num_id"></p>
+            <!--<span class="state">31批次</span>-->
+        </div>
+        <div class="active-detail">
+            <p>满<span class="num" id="consumeMoney"></span>减<span class="num" id="couponMoney"></span></p>
+        </div>
+        <div class="under-line"></div>
+        <uL>
+            <Li class="clearfix">
+                <span class="fl_l">数量</span>
+                <span class="fl_r" id="couponCount"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">已推送</span>
+                <span class="fl_r" id="pushedCount"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">已领取</span>
+                <span class="fl_r" id="receivedCount"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">已使用</span>
+                <span class="fl_r" id="usedCount"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">已过期</span>
+                <span class="fl_r" id="overdue"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">领取有效期</span>
+                <span class="fl_r" id="validReceiveDays"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">开始时间</span>
+                <span class="fl_r" id="startDate"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">结束时间</span>
+                <span class="fl_r" id="endDate"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">使用条件</span>
+                <span class="fl_r" id="remark"></span>
+            </Li>
+        </uL>
+    </section>
+    <div>
+        <input type="button" value="查看明细" class="btn blur-bg" id="detialed" >
+    </div>
+</body>
+<script>
+    ticket.ticketDetailReady();
+</script>
+</html>

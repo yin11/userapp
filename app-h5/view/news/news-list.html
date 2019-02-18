@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>新闻推送</title>
+    <link href="../../lib/WEUI/css/weui.min.css"  rel="stylesheet">
+    <link href="../../lib/WEUI/css/jquery-weui.min.css"  rel="stylesheet">
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/news.css"  rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../lib/WEUI/js/jquery-weui.min.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/news.js"></script>
+    <script>
+        window.onload = function(){
+            setTimeout(function(){
+                news.newsListReady();
+            },100);
+        }
+    </script>
+</head>
+<body class="body-bg">
+    <!--title-->
+    <header  class="border-bottom">
+        <a class="return">返回</a>
+        <h2>新闻推送</h2>
+        <div class="icon"><i class="ico-add" id="ico-add"></i><i class="ico-select" id="ico-select"></i></div>
+    </header>
+    <!--search-->
+    <section class="search">
+        <input type="text" placeholder="搜索标题，摘要" id="search">
+    </section>
+    <!--list-->
+    <section id="list">
+        <!--<div class="news-con">
+            <input type="hidden" value="">
+            <div class="news-con-top">
+                <div class="head">
+                    <img src="../../img/shop-head.png" width="100%">
+                </div>
+                <div class="content">
+                    <h3>追寻习京平的初心：宁德篇</h3>
+                    <p>月30日，全国8100万科技工作者迎来
+                        了属于自己的节日——首个“全国科技工作
+                        者日”。</p>
+                </div>
+            </div>
+            <p class="clearfix">
+                <span class="fl_l">2017-02-01  12:22:55</span>
+                <span class="fl_r"><i class="ico-phone"></i></span>
+                <span class="fl_r"><i class="ico-good"></i>20</span>
+                <span class="fl_r"><i class="ico-read"></i>20</span>
+            </p>
+        </div>
+        <div class="news-con">
+            <div class="news-con-top">
+                <div class="head">
+                    <img src="../../img/shop-head.png" width="100%">
+                </div>
+                <div class="content">
+                    <h3>追寻习京平的初心：宁德篇</h3>
+                    <p>月30日，全国8100万科技工作者迎来
+                        了属于自己的节日——首个“全国科技工作
+                        者日”。</p>
+                </div>
+            </div>
+            <p class="clearfix">
+                <span class="fl_l">2017-02-01  12:22:55</span>
+                <span class="fl_r"><i class="ico-computer"></i></span>
+                <span class="fl_r"><i class="ico-good"></i>20</span>
+                <span class="fl_r"><i class="ico-read"></i>20</span>
+            </p>
+        </div>-->
+    </section>
+    
+</body>
+
+</html>

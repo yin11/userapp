@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>卡券明细</title>
+    <link href="../../lib/WEUI/css/weui.min.css"  rel="stylesheet">
+    <link href="../../lib/WEUI/css/jquery-weui.min.css"  rel="stylesheet">
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/activity.css"  rel="stylesheet">
+
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../lib/WEUI/js/jquery-weui.min.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/tikect.js"></script>
+    <script>
+        window.onload = function(){
+            setTimeout(function(){
+                ticket.ticketDetailedReady();
+            },100);
+        }
+    </script>
+</head>
+<body class="body-bg">
+    <input type="hidden" value="0" class="flag">
+    <input type="hidden" value="1" id="pagmun">
+    <!--title-->
+    <header  class="border-bottom">
+        <a class="return">返回</a>
+        <h2>卡券明细</h2>
+        <div class="icon"><i class="ico-select" id="ico-select"></i></div>
+    </header>
+    <!--search-->
+    <section class="search">
+        <input type="text" placeholder="搜索卡券编号">
+    </section>
+    <!--list-->
+    <section id="list">
+        <!--<div class="ticker-con ongoing">
+            <div class="ticket-state">未领取</div>
+            <div class="vertical-line"></div>
+            <div class="con-text">
+                <p><span>编&nbsp;&nbsp;号</span><span>312564589654785478545</span></p>
+                <p><span>所属人</span><span>201202514523652</span></p>
+            </div>
+        </div>
+        <div class="ticker-con not-begin">
+            <div class="ticket-state">已领取</div>
+            <div class="vertical-line"></div>
+            <div class="con-text">
+                <p><span>编&nbsp;&nbsp;号</span><span>201202514523652</span></p>
+                <p><span>所属人</span><span>201202514523652</span></p>
+            </div>
+        </div>
+        <div class="ticker-con blue">
+            <div class="ticket-state">已消费</div>
+            <div class="vertical-line"></div>
+            <div class="con-text">
+                <p><span>编&nbsp;&nbsp;号</span><span>201202514523652</span></p>
+                <p><span>所属人</span><span>201202514523652</span></p>
+            </div>
+        </div>
+        <div class="ticker-con over">
+            <div class="ticket-state">已过期</div>
+            <div class="vertical-line"></div>
+            <div class="con-text">
+                <p><span>编&nbsp;&nbsp;号</span><span>201202514523652</span></p>
+                <p><span>所属人</span><span>201202514523652</span></p>
+            </div>
+        </div>-->
+    </section>
+</body>
+
+</html>

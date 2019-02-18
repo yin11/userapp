@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>新增卡券活动</title>
+    <link rel="stylesheet" href="../../lib/WEUI/css/weui.min.css">
+    <link rel="stylesheet" href="../../lib/WEUI/css/jquery-weui.min.css">
+
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/activity.css"  rel="stylesheet">
+    <link href="../../css/cover-weui.css"  rel="stylesheet">
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../lib/WEUI/js/jquery-weui.min.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/tikect.js"></script>
+    <script>
+        window.onload = function(){
+            setTimeout(function(){
+                ticket.addTicketReady();
+            },100);
+        }
+    </script>
+</head>
+<body class="body-bg">
+    <!--title-->
+    <header  class="border-bottom">
+        <a class="return">返回</a>
+        <h2>新增卡券活动</h2>
+    </header>
+    <!--detail-->
+    <section class="detail-box shadow-box">
+        <div class="title">
+            <span class="name blur-bg">商户名称</span>
+            <p id="shopName"></p>
+        </div>
+        <div class="active-detail">
+            <p>满<input type="number" placeholder="请输入" class="num" id="total">减<input type="number" placeholder="请输入" class="num" id="discount"></p>
+            <!--<p><span class="num">9</span>折</p>-->
+        </div>
+        <div class="under-line"></div>
+        <form>
+            <ul>
+                <li class="clearfix">
+                    <span class="fl_l">卡券标题</span>
+                    <input class="fl_r" type="text" placeholder="请输入标题" id="title">
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">当月使用次数（最多）</span>
+                    <input class="fl_r" type="number" placeholder="请输入次数" id="frequency">
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">开始时间</span>
+                    <input class="fl_r" type="text" readonly="" placeholder="请选择时间" id="start-time">
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">结束时间</span>
+                    <input class="fl_r" type="text" readonly="" placeholder="请选择时间" id="end-time">
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">有效天数</span>
+                    <input class="fl_r" type="number" placeholder="请输入有效天数" id="validReceiveDays">
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">选择门店</span>
+                    <input class="fl_r" type="text" readonly="" placeholder="请选择门店" id="shop">
+                </li>
+                <li class="clearfix">
+                    <p>使用条件</p>
+                    <textarea placeholder="请输入条件" id="term"></textarea>
+                </li>
+            </ul>
+        </form>
+    </section>
+    <div>
+        <input type="button" value="确定" class="btn blur-bg" id="sub">
+    </div>
+</body>
+
+</html>

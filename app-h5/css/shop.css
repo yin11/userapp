@@ -1,0 +1,305 @@
+/********* 商城订单 **********/
+.tab{
+    background: #fff;
+    font-size: 14px;
+    line-height: 31px;
+    padding-bottom: 5px;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+.search{
+    margin-top: 36px;
+}
+.tab span{
+    position: relative;
+}
+.tab .num{
+    position: absolute;
+    font-size: 6px;
+    line-height: 10px;
+    padding: 0 .2rem;
+    background: red;
+    color: #fff;
+    border-radius: 10px;
+    top: 0px;
+    left: 85%;
+    font-weight: normal;
+}
+.current{
+    font-weight: 600;
+    position: relative;
+}
+.current:before{
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 80%;
+    background: #1bbaff;
+    border-radius: 3px;
+    bottom: -5px;
+    left: 10%;
+}
+.order-con{
+    background: #fff;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.order-con>div{
+    padding-left: .75rem;
+    padding-right: 1.25rem;
+}
+.order-title{
+    line-height: 51px;
+}
+.info-title  .state{
+    color: #1bbaff;
+}
+.info-title i{
+    font-weight: normal;
+}
+.order-con>.order-delivery{
+    padding: 8px 1.25rem 8px .75rem;
+}
+.order-delivery button{
+    margin-left: .25rem;
+    border:1px solid #1bbaff;
+    color: #1bbaff;
+     width: 3.25rem;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 2px;
+}
+.goods-detail {
+    position: relative;
+    padding-left: 5rem!important;
+    line-height: 21px;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+.order-img{
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    overflow: hidden;
+    left: .75rem;
+    -webkit-box-shadow: 0px 0px 6px rgba(240, 240, 240, 1);
+    -moz-box-shadow: 0px 0px 6px rgba(240, 240, 240, 1);
+    box-shadow: 0px 0px 6px rgba(240, 240, 240, 1);
+}
+
+/******** 商城订单筛选 ********/
+.order-select .title{
+    text-align: left;
+    line-height: 50px;
+    padding-left:1.25rem;
+    font-size: 16px;
+}
+/*.order-select{*/
+    /*padding-bottom: 60px;*/
+    /*width: 80%;*/
+    /*left: 10%;*/
+    /*display: none;*/
+/*}*/
+.order-select button.item{
+    margin: 0 .15rem;
+    border: 1px solid #e2e5ed;
+    font-size: 16px;
+    line-height: 30px;
+    color: #b7bed3;
+    border-radius: 3px;
+}
+.order-select button.item.active{
+    background: #1bbaff;
+    color: #fff;
+    border-color: #1bbaff;
+}
+.order-select .time{
+    padding: 0 1.25rem;
+}
+.order-select .time input{
+    width: 45%;
+    line-height: 28px;
+    border:1px solid #e2e5ed;
+    font-size: 12px;
+    text-align: center;
+}
+.sum,.type{
+    padding:0 1.25rem;
+}
+.sum .item{
+    font-size: 16px;
+}
+.sum .item.active span{
+    position: relative;
+    font-weight: 600;
+}
+.sum .item.active span:before{
+    content: "";
+    height: 4px;
+    width: 80%;
+    position: absolute;
+    background: #1bbaff;
+    border-radius: 4px;
+    left: 10%;
+    bottom: -5px;
+}
+.order-select .btn{
+    position: absolute;
+    bottom: 0;
+}
+/*.btn-position{*/
+    /*position: absolute;*/
+    /*background: #1bbaff;*/
+    /*color: #fff;*/
+    /*-webkit-box-shadow: 0px 0px 6px rgba(17, 186, 255, 1);*/
+    /*-moz-box-shadow: 0px 0px 6px rgba(17, 186, 255, 1);*/
+    /*box-shadow: 0px 0px 6px rgba(17, 186, 255, 1);*/
+    /*border-radius: 50%;*/
+    /*width: 4rem;*/
+    /*height: 4rem;*/
+    /*text-align: center;*/
+    /*line-height: 4rem;*/
+    /*font-size: 16px;*/
+    /*left: 50%;*/
+    /*top:100%;*/
+    /*margin: -2rem 0 0 -2rem;*/
+/*}*/
+
+
+
+/************ 商城订单详情 ************/
+.order-state{
+    background: #fff;
+    margin-top: 7px;
+    padding: 19px 1.15rem 19px 1.4rem;
+}
+.order-state button{
+    font-size: 14px;
+    color: #1bbaff;
+    border: 1px solid #1bbaff;
+    line-height: 25px;
+    width: 3.75rem;
+    text-align: center;
+    border-radius: 2px;
+}
+.order-state span{
+    color:#ffbb28;
+}
+/*商品信息*/
+.info-title{
+    font-size: 14px;
+    line-height: 50px;
+    padding-left: .425rem;
+    font-weight: 600;
+}
+.info-box{
+    background: #fff;
+    margin-top: 7px;
+    padding: 0 .7rem;
+}
+.goods-foot{
+    line-height: 40px;
+    padding: 0 .6rem;
+    font-size: 13px;
+}
+.price{
+    color: #3fa5ef;
+}
+/*快递信息*/
+.express-info{
+    line-height: 21px;
+    font-size: 12px;
+    padding-left: .5rem;
+    padding-bottom: .75rem;
+    color: #5c5f71;
+}
+.express{
+    background: #fff;
+    padding: 0 .875rem 0 1.15rem;
+    margin: 6px 0 25px 0;
+    font-size: 12px;
+    line-height: 45px;
+}
+.info-name{
+    color: #3d445a;
+    font-weight: 600;
+}
+.express li input[readonly].fl_r {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUBAMAAABL3sEiAAAALVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADBoCg+AAAAD3RSTlMATEUqCQVCJT4wLh8NOBkzWI5dAAAAVElEQVQI12M4e4ABBDaKgCl2oQAwXagKppihXMNUMMUlxgAGCxvAFKcEhGvYAqYc5UAki+IGMEccwikAUUHCIJJV0QBEsYE5DIkLQOQhSYjtE0AkAHgkDHYjIcr3AAAAAElFTkSuQmCC) no-repeat right center;
+    background-size: 6px auto;
+}
+.express li input.fl_r {
+    height: 45px;
+    line-height: 45px;
+    width: 50%;
+    text-align: right;
+    padding-right: .55rem;
+}
+textarea {
+    width: 100%;
+    background: #fafafa;
+    padding: 10px .3rem;
+    box-sizing: border-box;
+    height: 70px;
+}
+
+
+
+/************ 查看物流 *************/
+.logistics{
+    padding: 0 .85rem 23px .85rem;
+    background: #078ff2;
+    color: #fff;
+}
+.logistics .info-title{
+    text-align: center;
+    font-size: 17px;
+    font-weight: normal;
+}
+.logistics .info-name{
+    color: #fff;
+}
+.logistics-box{
+    border-radius: 8px;
+    position: relative;
+    top:-35px;
+    padding: 40px .6rem 90px 1.8rem;
+}
+.logistics-state{
+    font-size: 12px;
+    line-height: 20px;
+}
+.logistics-time{
+    font-size: 9px;
+    color: #a4adc7;
+    line-height: 13px;
+}
+.logistics-con{
+    padding: 0 0 25px 2.6rem;
+    position: relative;
+}
+.logistics-con:before{
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #078ff2;
+    left:0;
+    margin-left: -7px;
+    z-index: 1;
+}
+.logistics-con:after{
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background:#d0d0d0 ;
+    content: "";
+    top: 10%;
+    left: 0;
+    z-index: 0;
+}
+.logistics-con:last-of-type:after{
+    background: #fff;
+}

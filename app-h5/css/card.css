@@ -1,0 +1,100 @@
+/********** 卡统计 ********/
+/***** ring-chart ****/
+.ring-chart{
+    margin: 34px auto;
+    width: 100%;
+    height: 225px;
+    background: #fff;
+}
+.diagram{
+    width: 100%;
+    height: 280px;
+}
+.card-box{
+    display: flex;
+    display: -webkit-flex;
+    text-align: center;
+    font-size: 12px;
+    line-height: 22px;
+    margin: 16px 0;
+}
+.card-box div{
+    flex: 1;
+}
+.card-box div>p:nth-of-type(2){
+    font-size: 15px;
+    color: #0c8deb;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+
+/****** 卡购买记录 ********/
+.purchase-list{
+    position: relative;
+    padding:33px 0 33px 4.625rem;
+    font-size: 16px;
+    font-weight: normal;
+    background: #fff;
+}
+.ico-bg{
+    width: 3.125rem;
+    height: 3.125rem;
+    position: absolute;
+    left: 1.125rem;
+    top: 19px;
+}
+.currency .ico-bg{
+    background: url("data:image/png;base64,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") no-repeat;
+    background-size: cover;
+}
+.custom .ico-bg{
+    background: url("data:image/png;base64,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") no-repeat;
+    background-size: cover;
+}
+.time{
+    font-size: 10px;
+    line-height: 19px;
+}
+.number{
+    position: absolute;
+    right: 1rem;
+    font-size: 20px;
+    top:44px;
+}
+.more{
+    font-size: 12px;
+    line-height: 38px;
+    color: #c0c6d8;
+    text-align: center;
+}
+
+/**** 购卡详情 ****/
+.detail.purchase-list{
+    font-size: 12px;
+    line-height: 21px;
+    padding: 20px 0 20px 4.625rem;
+}
+
+/**** 卡使用统计 ****/
+.usage{
+    background: #fff;
+    padding-left: 1rem;
+}
+.usage-list{
+    position: relative;
+    padding: 20px 0 20px 4rem;
+    font-size: 12px;
+    line-height: 20px;
+}
+.usage-list .ico-bg {
+    left: .1rem;
+}
+.usage-list .number{
+    top:20px;
+    right: .5rem;
+}
+
+
+
+

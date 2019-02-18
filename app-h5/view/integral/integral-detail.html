@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>积分活动详情</title>
+    <link rel="stylesheet" href="../../lib/WEUI/css/weui.min.css">
+    <link rel="stylesheet" href="../../lib/WEUI/css/jquery-weui.min.css">
+
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/activity.css"  rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../lib/WEUI/js/jquery-weui.min.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/integral.js"></script>
+    <script>
+        window.onload = function(){
+            setTimeout(function(){
+                integral.integralDetailReady();
+            },100);
+        }
+    </script>
+</head>
+<body class="body-bg">
+    <!--title-->
+    <header  class="border-bottom">
+        <a class="return">返回</a>
+        <h2>积分活动详情</h2>
+        <div class="icon"><i class="ico-member"></i></div>
+    </header>
+    <!--detail-->
+    <section class="detail-box shadow-box">
+        <div class="title">
+            <span class="name blur-bg">活动编号</span>
+            <p id="num_id">1254789658</p>
+            <!--<span class="state">31批次</span>-->
+        </div>
+        <div class="active-detail">
+            <p>满<span class="num">300</span>减<span class="num">100</span></p>
+            <!--<p><span class="num">9</span>折</p>-->
+        </div>
+        <uL>
+            <Li class="clearfix">
+                <span class="fl_l">参与人数</span>
+                <span class="fl_r" id="partakeCount"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">已参与总次数</span>
+                <span class="fl_r" id="partakeTotalCount"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">开始时间</span>
+                <span class="fl_r" id="startDate"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">结束时间</span>
+                <span class="fl_r" id="endDate"></span>
+            </Li>
+            <Li class="clearfix">
+                <span class="fl_l">使用条件</span>
+                <span class="fl_r" id="remark"></span>
+            </Li>
+        </uL>
+    </section>
+    <div>
+        <input type="button" value="结束活动" class="btn blur-bg" id="over" >
+    </div>
+
+</body>
+
+</html>

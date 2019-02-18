@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>活动参与会员</title>
+    <link href="../../lib/WEUI/css/weui.min.css"  rel="stylesheet">
+    <link href="../../lib/WEUI/css/jquery-weui.min.css"  rel="stylesheet">
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/activity.css"  rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../lib/WEUI/js/jquery-weui.min.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/integral.js"></script>
+    <script>
+        window.onload = function(){
+            setTimeout(function(){
+                integral.integralMemberReady();
+            },100);
+        }
+    </script>
+</head>
+<body class="body-bg">
+    <!--title-->
+    <header  class="border-bottom">
+        <a href="javascript:void();" class="return">返回</a>
+        <h2>活动参与会员</h2>
+    </header>
+    <!--list-->
+    <ul class="shadow-box" id="list">
+        <!--<li class="clearfix participate-con">
+            <div class="fl_l">
+                <img width="100%" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAABVCAMAAAAPK1hoAAABC1BMVEWapMEAAACapMH7/P2cpsKapMGapMH///+apMHT1+SapMGapMGapMGapMH09fiapMGapMGapMGapMH6+/yapMH+/v7////+/v/7+/2apMH5+vv19vn9/v78/f34+fr29/nt7/Ts7vTq7PLn6fDl6O/a3ujY3OfCyNq2vdKstMz9/f76+vz5+vz5+fv19vn09fjw8fbi5e3f4uvc3+rQ1ePM0eDJzt6gqsX////9/v79/v78/f34+fv29/rr7fP5+vv19vnT1+S+xNf3+Pr9/f7+/v77+/35+vzo6/H29/r5+fv3+Pr8/P38/f74+fv09fj7+/3V2eX09fj+/v73+PrEytv09fjQ1eL////5YHU/AAAAWHRSTlMzADDZAiYt+CoEIQsJDq8aFB0H0hcW/PTUEb2e6OW7tJWSiYB8Z2NKQjsSzcnGrKacdm9qWVRRNQ3x7t/CqI6MeVxHOAnr25SGgGxJMCQjH9ZgXFtZTUgN/syQagAAA5pJREFUWMOtmYdW4zAQRZ8TlzhxiFMIKUCogYRel963L7B99f9fss6GgyHRk2SfvR9wjzyakTwjWFqCZinv5DIDXCdfDguWFmiMNSeDUTJOrZDeWinlwHBLQSpr0YGaXDOxtZiDHjdMZC04MMNtGlvtMsxxKmbWooskZEITawlJyds6q+0gOblAbfVzSEOmoLJWXKQjU+RWLtVTZFafSA2DILfaJKam2kBq5bvfW56f2GhUz7YWrsFxfYm1BsLy5ol45t32AS+zcWsBcnYbYoTWIQilUatNdmpCjFNfACEYsZYh4zArpHRYkcVW/v0HniA0epBSi61s/1c8QamS9PJfWJuQMSMUbEFK+YU1RzeKs6RYLOhSr4Wa+hueXaBRfSc0XMgXaz9ZA2lFCR2efLHhk7VEo5omss6TVVZWb4711g1IqURWUgFdocfrsUoACcC8MGCfhQAkAyZMrHvyLBhYbcg4M7EuQkrBAjlY1kysC+yIgRVCxrqJ9QP5l7FATtZZE+sOO2VBLsEtE2sXZLsgP6+waGL9BTk2rAxkrAg90yBUYEFOVm/dBCGg1jm99RqEAmzIudFKq2AUqVVfs12F1QKhN5V2qSiwHIjYU19bq4Bit1ykisEyOBVSBdqynYOCqLby4HT4GajAtcD7K5613i5UOJG1CRW7khprrUBJObIGULOUHXF2oSGMrHFqMfY2T8UQr7q9Dy2VgTUPPTfdncWlnf0eDHCtgTXE/6X8z1oBZXUvaomq2dc01jtzu4rKag7/iByiXJrlR4F39uEG9KcQrNNaOR8qOfXOofyGHVptSRbMe8KANmmTI6skCw7WhBnZb7LmaGgN6AWrZ360BIbW8cUuiCRsjyTr0Dq22Atu0Ac3HFrHGs4dkZSL11GNrf5zGhwKjv5eKMbWAaGiITTvZvKj8wGHH9N6JuJpRmyNY7Aq0nEQf39sHVDk16qeNUSUZNOcGvsTNGxn8vJ5Vpnkv1ktODaZveXXU1tncrZFrPZsamv2D58+3p2nlK4/qialdjuVdGNSM9W9Ok7srLf72gn052xC6dtPJtPyxy0vibR1azjZ/141z6irI+NXiP7HaSPnVPsh0YvJ/eW03nl+m/h15+Hqqyq+3un7L36al6ij3+01+YpPGps/J1O/mtn924+z1dMTL87N45lG6/LzpG/2asbN9z8uO43pKa/uTb3Ntt5/Ih9OrBz/7qg/OaB/dOfblp6/mfFAsJAvYWsAAAAASUVORK5CYII=">
+                888888
+            </div>
+            <div class="fl_r">
+                参与次数<i class="participate-num">54</i>
+            </div>
+        </li>
+        <li class="clearfix participate-con">
+            <div class="fl_l">888888</div>
+            <div class="fl_r">
+                参与次数<i class="participate-num">54</i>
+            </div>
+        </li>
+        <li class="clearfix participate-con">
+            <div class="fl_l">15745896587</div>
+            <div class="fl_r">
+                参与次数<i class="participate-num">54</i>
+            </div>
+        </li>-->
+    </ul>
+</body>
+
+</html>

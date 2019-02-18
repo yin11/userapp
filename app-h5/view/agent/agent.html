@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>代理商</title>
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/agent.css"  rel="stylesheet">
+
+    <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/agent.js"></script>
+    <script>
+        window.onload = function(){
+            setTimeout(function(){
+                agent.agentReady();
+            },100);
+        }
+    </script>
+</head>
+<body class="body-bg">
+    <!--title-->
+    <header  class="border-bottom">
+        <a class="return">返回</a>
+        <h2>代理商</h2>
+        <!--<div class="icon"><a class="ico-phone " href="tel:13764567708"></a></div>-->
+    </header>
+    <!--代理商信息-->
+    <section class="agent-box">
+        <div class="agent-head"><img src="../../img/agent-head.png" width="100%"></div>
+        <div>
+            <p>我的代理商：<i id="advertiserContacts"></i></p>
+            <p>手机号码：<i id="advertiserContactPhone"></i></p>
+            <p>地址：<i id="advertiserUnitAddress"></i></p>
+        </div>
+    </section>
+    <!---->
+    <section class="flex-box agent-flex">
+        <div class="item">
+            <i class="icon"></i>
+            <span>私聊</span>
+        </div>
+        <div class="item">
+            <i class="icon"></i>
+            <span>电话</span>
+        </div>
+        <!--<div class="item" id="query">-->
+            <!--<i class="icon"></i>-->
+            <!--<span>代理商查询</span>-->
+        <!--</div>-->
+        <div class="item" id="join">
+            <i class="icon"></i>
+            <span>加盟代理商</span>
+        </div>
+    </section>
+</body>
+<script>
+
+</script>
+</html>

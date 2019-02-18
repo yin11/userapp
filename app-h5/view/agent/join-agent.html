@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>加盟代理商</title>
+    <link rel="stylesheet" href="../../lib/WEUI/css/weui.min.css">
+    <link rel="stylesheet" href="../../lib/WEUI/css/jquery-weui.min.css">
+
+    <link href="../../css/reset.css"  rel="stylesheet">
+    <link href="../../css/agent.css"  rel="stylesheet">
+    <link href="../../css/cover-weui.css"  rel="stylesheet">
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../lib/WEUI/js/jquery-weui.min.js"></script>
+    <script src="../../lib/WEUI/js/city-picker.min.js"></script>
+    <script src="../../js/md5.js"></script>
+    <script src="../../js/com.js"></script>
+    <script src="../../js/interactive.js" onload="getParameter();"></script>
+    <script src="../../js/agent.js"></script>
+    <script>
+        window.onload = function(){
+            setTimeout(function(){
+                agent.addAgentReady();
+            },100);
+        }
+    </script>
+</head>
+<body class="body-bg">
+    <!--title-->
+    <header  class="border-bottom">
+        <a href="javascript:void(0);" class="return">返回</a>
+        <h2>加盟代理商</h2>
+    </header>
+    <!--form-->
+    <section class="shadow-box form-box" id="detail">
+        <form>
+            <ul>
+                <li class="clearfix">
+                    <span class="fl_l">你的姓名</span>
+                    <input class="fl_r" type="text"  placeholder="请输入姓名" id="realName">
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">性别</span>
+                    <div class="fl_r gender">
+                        <label><input type="radio" name="sex" value="0" checked><i class="icon"></i>女</label>
+                        <label><input type="radio" name="sex" value="1" ><i class="icon"></i>男</label>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">联系电话</span>
+                    <input class="fl_r" type="number" pattern="[0~9]*"  placeholder="请输入号码" id="phone">
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">住址</span>
+                    <input class="fl_r" type="text"  placeholder="请输入住址" id="idAddress">
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">公司地址</span>
+                    <input class="fl_r" type="text"  placeholder="请输入公司地址" id="unitAddress">
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">从事的行业</span>
+                    <input class="fl_r" type="text"  placeholder="请输入行业" id="industry">
+                </li>
+                <li class="clearfix">
+                    <span class="fl_l">您想成为哪里的代理</span>
+                    <input class="fl_r" type="text" readonly placeholder="请选择区域" id="agentArea">
+                </li>
+                <li >
+                    <textarea placeholder="说说为什么想成为我们的代理" id="regard"></textarea>
+                </li>
+            </ul>
+        </form>
+    </section>
+    <div>
+        <input type="button" value="提交" class="btn blur-bg">
+    </div>
+</body>
+
+</html>
